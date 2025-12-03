@@ -20,11 +20,11 @@ if __name__ == "__main__":
     if sheet_data:
         for flight_data in sheet_data:
             if flight_data["iataCode"] == "":
-                flights = FlightSearch(flight_data["city"])
-                iata_code = flights.get_IATA_code()
+                flights = FlightSearch()
+                iata_code = flights.get_IATA_code(city = flight_data["city"])
                 data.update_data(id = flight_data["id"], iataCode= iata_code)
             else:
                 pass #To be updated later. 
-            
+        breakpoint()
     else:
         print(f"Sheet_data returned back: {sheet_data}")
