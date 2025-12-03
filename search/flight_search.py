@@ -94,5 +94,5 @@ class FlightSearch:
             params=parameters,
             headers=headers
         )
-      
+        #TODO add in try/except blocks for key errors when returning the response KeyErrors, IndexErrors 
         return response.json()["data"][0]["iataCode"]
